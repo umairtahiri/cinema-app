@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+}
+
+.home-page {
+  background: #000;
+  width: 100%;
+  height: 100%;
+
+  header {
+    height: 40px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+    .left-side {
+      color: #009100;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .right-side {
+      color: #18da3f;
+      font-size: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      span {
+        margin-right: 10px;
+        font-weight: bold;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .main-container {
+    .first-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 20px 0;
+
+      .search-area {
+        display: flex;
+        align-items: center;
+
+        input {
+          height: 25px;
+          border: 2px solid #ccc;
+          width: 220px;
+        }
+
+        img {
+          width: 23px;
+          height: 23px;
+          margin-left: 20px;
+          cursor: pointer;
+        }
+
+        .error-msg {
+          color: red;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .second-container {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      height: 100vh;
+      max-height: calc(100vh - 132px);
+      overflow: auto;
+
+      @media only screen and (max-width: 480px) {
+        justify-content: space-around;
+      }
+
+      .error-msg {
+        font-size: 20px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+
+      .movie-card {
+        cursor: pointer;
+        margin: 10px;
+        width: min-content;
+        display: block;
+
+        .img-container {
+          img {
+            border: 6px solid #fff;
+            border-radius: 4px;
+          }
+
+          @media (max-width: 480px) {
+            img {
+              border: 6px solid #fff;
+              border-radius: 4px;
+              width: 130px;
+              object-fit: cover
+            };
+          }
+
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+
+        .details {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+
+          .title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+
+            @media only screen and (max-width: 480px) {
+              font-size: 14px;
+            }
+          }
+
+          .year {
+            font-size: 18px;
+            font-weight: 400;
+            color: #eee;
+
+            @media only screen and (max-width: 480px) {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .loader-overlay {
+        position: absolute;
+        background: #000;
+        opacity: 0.5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
